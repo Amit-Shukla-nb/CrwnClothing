@@ -1,16 +1,23 @@
 import React from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
 
-import HomePage from './homepage.component';
+import HomePage from './pages/homepage/homepage.component';
+
+const HatsPage = () => (
+  <div>
+    <h1>HATE PAGE</h1>
+  </div>
+)
+
 
 function App() {
-
-   return (
-      <div>
-        <HomePage />
-      </div>
-    );
-    
+  return (
+    <div>
+      <Route exact path='/' component={HomePage} />
+      <Route path='/hate' component={HatsPage} />
+    </div>
+  );
 }
 
 export default App;
